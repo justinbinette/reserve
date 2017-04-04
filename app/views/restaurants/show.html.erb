@@ -1,5 +1,27 @@
 <p id="notice"><%= notice %></p>
 
+<%= image_tag(@restaurant.image_url(:thumb).to_s) %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @restaurant.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @restaurant.address %>
+</p>
+
+<p>
+  <strong>Number_of_Seats:</strong>
+  <%= @restaurant.number_of_seats %>
+</p>
+
+<p>
+  <strong>Cuisine:</strong>
+  <%= @restaurant.cuisine %>
+</p>
+
 <p>
     <div id="map"></div>
 
@@ -22,26 +44,7 @@
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBHiT8oybCNC3eCJGa5x5X9GbWnPuhl3Qo&callback=initMap">
     </script>
 </p>
-<%= image_tag(@restaurant.image_url(:thumb).to_s) %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @restaurant.name %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @restaurant.address %>
-</p>
-
-<p>
-  <strong>Number_of_Seats:</strong>
-  <%= @restaurant.number_of_seats %>
-</p>
-
-<p>
-  <strong>Cuisine:</strong>
-  <%= @restaurant.cuisine %>
-</p>
+<%= link_to 'Reservation', new_restaurant_reservation_path(@restaurant) %>
 <%=link_to 'Edit', edit_restaurant_path(@restaurant)%>
 <%= link_to 'Back', restaurants_path %>

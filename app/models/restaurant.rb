@@ -4,8 +4,8 @@ class Restaurant < ApplicationRecord
   validates :number_of_seats, numericality: true
   validates :cuisine, presence: true
   mount_uploader :image, ImageUploader
-
   geocoded_by :address
   after_validation :geocode
-
+  has_many :reservations
+  belongs_to :user
 end

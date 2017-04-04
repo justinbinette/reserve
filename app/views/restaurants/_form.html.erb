@@ -23,12 +23,12 @@
 
   <div class="field">
     <%= f.label :cuisine %>
-    <%= f.text_field :cuisine %>
+    <%= f.select :cuisine, ['Thai', 'Pizza', 'Fast Food', 'Chinese', 'Italian', 'Mexican', 'Indian', 'Mediterranean']%>
   </div>
 
   <div class="field">
     <%= f.label :number_of_seats %>
-    <%= f.text_field :number_of_seats %>
+    <%= f.number_field :number_of_seats, min: 10%>
   </div>
 
   <div class="field">
